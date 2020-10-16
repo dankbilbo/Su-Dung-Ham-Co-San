@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input id="text" type="text">
+<button id="switch" onclick="switchUL()">Switch</button>
+<p id="1"></p>
+<script>
+    function switchUL(){
+        let arr = new Array();
+        let str = document.getElementById("text").value;
+        let upper = str.toUpperCase();
+        let lower = str.toLowerCase();
+        for(let i = 0; i < str.length; i++){
+            if(upper.indexOf(str[i]) !== -1){
+                arr.push(str[i].toLowerCase());
+            }
+            if(lower.indexOf(str[i]) !== -1){
+                arr.push(str[i].toUpperCase());
+            }
+            document.getElementById("1").innerHTML += arr[i];
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn dấu</title>
+</head>
+<body>
+<input id="number" type="number">
+<button id="add" onclick="add()">Add "-"</button>
+<p id="1"></p>
+<script>
+    function add(){
+        let num = document.getElementById("number").value;
+        console.log(num);
+        let numbers = num.split("");
+        for(let i = 0; i < numbers.length - 1; i++){
+            if(numbers[i] % 2 === 0 && numbers[i + 1] % 2 === 0){
+                numbers.splice(i + 1, 0, "-");
+                i++;
+            }
+        }
+        let result = numbers.join("");
+        document.getElementById("1").innerHTML = result;
+    }
+</script>
+</body>
+</html>
